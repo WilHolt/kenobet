@@ -4,64 +4,40 @@
 #include <iostream>
 #include <vector>
 
-class Operacao{
-private:
-	std::string descricao_op;
-	double valor_op;
-	std::string flag;
-public:
-Operacao();
-Operacao(std::string _descricao_op, double _valor_op, std::string _flag);
-~Operacao();
-void Print();
-friend std::ostream& operator<< (std::ostream &o, Operacao const &t){
-	o<<t.descricao_op << "\n" << "valor:" << t.valor_op <<"   "<<"Flag:"<< t.flag;
-	return o;
-}
-};
+using number_type = unsigned short int ; // <! data type for a keno hit.
+ using cash_type = float ; // <! Defines the wage type in this application .
+ using set_of_numbers_type = std::vector<number_type>;
 
+ class KenoBet{
+ private:
+	 cash_type m_wage;
+	 std::vector<number_type> bet;
+	 std::vector<number_type> top;
 
-class Conta{
-public:
-	Conta();
-	Conta(	std::string _agencia, std::string _numero, std::string _status,
-	double _saldo,
-	double _limite,
-	double _limite_disp);
-	virtual ~Conta();
-protected:
-	std::string agencia;
-	std::string numero;
-	std::string status;
-	double saldo;
-	double limite;
-	double limite_disp;
-	std::vector<Operacao> historico;
-protected:
-	//friend double operator+ (Conta  &t1, Conta  &t2);
-	//friend double operator- (Conta  &t1, Conta  &t2);
-public:
-	// getters
-	std::string getAgencia();
-	std::string getNumero();
-	std::string getStatus();
-	double getSaldo();
-	double getLimite();
-	double getLimite_disp();
-	// setters
-	int setSaldo();
-	int setLimite();
-	double setLimite_disp();
-	std::vector<Operacao> fatura;
-	//metodos menu
-	void saque(int retirada);
-	void deposito(int valor);
-	void transferencia(Conta &t1,Conta &t2,double valor);
-	void printSaldo();
-	void printExtrato();
-	friend std::ostream& operator<< (std::ostream &o, Conta const &t);
-public:
-	virtual std::ostream& print(std::ostream&) const = 0;
-};
+ public:
+ //! Creates an empty Keno bet.
+ KenoBet():m_wage (0)
+ { /* empty */ };
 
+ /*! Adds a number to the spots only if the number is not already there .
+ @param spot_ The number we wish to include in the bet.
+ @return T if number chosen is successfully inserted ; F otherwise . */
+ bool add_number( number_type spot_ );
+
+ /*! Sets the amount of money the player is betting .
+ @param wage_ The wage .
+ @return True if we have a wage above zero ; false otherwise . */
+bool set_wage( cash_type wage_ );
+
+ //! Resets a bet to an empty state .
+void reset( void );
+
+ /*! Retrieves the player ’s wage on this bet.
+ @return The wage value . */
+cash_type get_wage(void) const ;
+
+ /*! Returns to the current number of spots in the player ’s bet.
+ @return Number of spots present in the bet. */
+size_t size (void) const;
+ };
 #endif
