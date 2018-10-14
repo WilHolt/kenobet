@@ -80,12 +80,12 @@ return true;
  }
  void KenoBet::roll_turn(){
 	bool ok = false;
-//   std::random_device rd;
-//    std::mt19937 e{rd()}; // or std::default_random_engine e{rd()};
-//    std::uniform_int_distribution<int> dist{1, 80};
-//            for (auto i = 0; i < 20; ++i) {
-//             turn[i] = dist(rd);
-//    }
+    std::random_device rd;
+    std::mt19937 e{rd()}; // or std::default_random_engine e{rd()};
+    std::uniform_int_distribution<int> dist{1, 80};
+            for (auto i = 0; i < 20; ++i) {
+             turn[i] = dist(rd);
+    }
 turn={21, 12, 64};
 }
 bool KenoBet::set_rounds( number_type rounds_ ){
