@@ -1,3 +1,8 @@
+/**
+ * @file kenobet.h
+ * @brief this is the include file of project
+ * 
+*/
 #ifndef _KENOBET_H_
 #define _KENOBET_H_
 
@@ -7,6 +12,8 @@
 #include <string>     // std::string, std::to_string
 #include <chrono>// sleep_for, sleep_until
 #include <thread>// nanoseconds, system_clock, seconds
+#include <ctime> //time
+#include <cstdlib> //rand 
 
 using namespace std::this_thread; // sleep_for, sleep_until
 using namespace std::chrono; // nanoseconds, system_clock, seconds
@@ -56,19 +63,24 @@ using number_type = unsigned short int ; // <! data type for a keno hit.
 
  };
 
- /*! Adds a number to the spots only if the number is not already there .
- @param spot_ The number we wish to include in the bet.
- @return T if number chosen is successfully inserted ; F otherwise . */
+ /** 
+  * @brief Adds a number to the spots only if the number is not already there .
+  * @param spot_ The number we wish to include in the bet.
+  * @return T if number chosen is successfully inserted ; F otherwise . */
  bool add_number( number_type spot_ );
 
- /*! Sets the amount of money the player is betting .
- @param wage_ The wage .
- @return True if we have a wage above zero ; false otherwise . */
+ /**
+  * @brief Sets the amount of money the player is betting .
+  * @return True if we have a wage above zero ; false otherwise .
+  * @param wage_ The wage .  
+ */
 bool set_wage( cash_type wage_ );
 
- /*! Sets the quantity of round the player will play .
- @param round_ The round .
- @return True if we have a wage above zero ; false otherwise . */
+ /**
+  * @brief Sets the quantity of round the player will play .
+  *  @param round_ The round .
+  *  @return True if we have a wage above zero ; false otherwise .
+  */
 bool set_rounds( number_type rounds_ );
 
  //! Resets a bet to an empty state .
@@ -78,13 +90,27 @@ void reset( void );
  @return The wage value . */
 cash_type get_wage(void) const ;
 
- /*! Returns to the current number of spots in the player ’s bet.
- @return Number of spots present in the bet. */
+
+ /** @brief Show Vector of Bets
+ @return void . */
+void show_bets();
+
+ /** @brief Show Payout Table
+  *  @return void . */
+void show_payout();
+ /** 
+  * @brief Returns to the current number of spots in the player ’s bet.
+  * @return Number of spots present in the bet. */
 size_t size (void) const;
 
+ /** @brief 
+  * Generate 20 random numbers every round
+  * @return void . */
 void roll_turn();
- /*! Check if the player have hit.
- @return True if we have a hit ; false otherwise . */
+
+ /** @brief
+  *  Check if the player have hit.
+  *  @return True if we have a hit ; false otherwise . */
  bool check();
  };
 

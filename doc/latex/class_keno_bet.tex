@@ -1,0 +1,166 @@
+\hypertarget{class_keno_bet}{}\section{Keno\+Bet Class Reference}
+\label{class_keno_bet}\index{Keno\+Bet@{Keno\+Bet}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_keno_bet_a383bdbb38df73584f72670a1cd0f777b}\label{class_keno_bet_a383bdbb38df73584f72670a1cd0f777b}} 
+\mbox{\hyperlink{class_keno_bet_a383bdbb38df73584f72670a1cd0f777b}{Keno\+Bet}} ()
+\begin{DoxyCompactList}\small\item\em Creates an empty Keno bet. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_keno_bet_a670252422c82f61d89873e2917ab19ff}{add\+\_\+number}} (number\+\_\+type spot\+\_\+)
+\begin{DoxyCompactList}\small\item\em Adds a number to the spots only if the number is not already there . \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_keno_bet_ade3e0f73094137c791c22c51bdd9ce55}{set\+\_\+wage}} (cash\+\_\+type wage\+\_\+)
+\begin{DoxyCompactList}\small\item\em Sets the amount of money the player is betting . \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_keno_bet_a513c7b942977a682d31c2242ca411fe4}{set\+\_\+rounds}} (number\+\_\+type rounds\+\_\+)
+\begin{DoxyCompactList}\small\item\em Sets the quantity of round the player will play . \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_keno_bet_acc2afd4d502e44fdfbb122f3389bc633}\label{class_keno_bet_acc2afd4d502e44fdfbb122f3389bc633}} 
+void \mbox{\hyperlink{class_keno_bet_acc2afd4d502e44fdfbb122f3389bc633}{reset}} (void)
+\begin{DoxyCompactList}\small\item\em Resets a bet to an empty state . \end{DoxyCompactList}\item 
+cash\+\_\+type \mbox{\hyperlink{class_keno_bet_a5900dbff144d148671c015278261396e}{get\+\_\+wage}} (void) const
+\item 
+void \mbox{\hyperlink{class_keno_bet_a865301e99ebddfcee895d19eadb43fba}{show\+\_\+bets}} ()
+\begin{DoxyCompactList}\small\item\em Show Vector of Bets. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_keno_bet_a50b9ffd882ae67857ecce259f5411f1c}{show\+\_\+payout}} ()
+\begin{DoxyCompactList}\small\item\em Show Payout Table. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{class_keno_bet_aa6f65b35514270c2707e60b9dea23ae9}{size}} (void) const
+\begin{DoxyCompactList}\small\item\em Returns to the current number of spots in the player ’s bet. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_keno_bet_a4f059f08a41fc0f41e30cf5dd7014d8f}{roll\+\_\+turn}} ()
+\begin{DoxyCompactList}\small\item\em Generate 20 random numbers every round. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_keno_bet_a433e47b1968b0338ceecdd525a276f5e}{check}} ()
+\begin{DoxyCompactList}\small\item\em Check if the player have hit. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_keno_bet_a670252422c82f61d89873e2917ab19ff}\label{class_keno_bet_a670252422c82f61d89873e2917ab19ff}} 
+\index{Keno\+Bet@{Keno\+Bet}!add\+\_\+number@{add\+\_\+number}}
+\index{add\+\_\+number@{add\+\_\+number}!Keno\+Bet@{Keno\+Bet}}
+\subsubsection{\texorpdfstring{add\+\_\+number()}{add\_number()}}
+{\footnotesize\ttfamily bool Keno\+Bet\+::add\+\_\+number (\begin{DoxyParamCaption}\item[{number\+\_\+type}]{spot\+\_\+ }\end{DoxyParamCaption})}
+
+
+
+Adds a number to the spots only if the number is not already there . 
+
+
+\begin{DoxyParams}{Parameters}
+{\em spot\+\_\+} & The number we wish to include in the bet. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T if number chosen is successfully inserted ; F otherwise . 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_keno_bet_a433e47b1968b0338ceecdd525a276f5e}\label{class_keno_bet_a433e47b1968b0338ceecdd525a276f5e}} 
+\index{Keno\+Bet@{Keno\+Bet}!check@{check}}
+\index{check@{check}!Keno\+Bet@{Keno\+Bet}}
+\subsubsection{\texorpdfstring{check()}{check()}}
+{\footnotesize\ttfamily bool Keno\+Bet\+::check (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Check if the player have hit. 
+
+\begin{DoxyReturn}{Returns}
+True if we have a hit ; false otherwise . 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_keno_bet_a5900dbff144d148671c015278261396e}\label{class_keno_bet_a5900dbff144d148671c015278261396e}} 
+\index{Keno\+Bet@{Keno\+Bet}!get\+\_\+wage@{get\+\_\+wage}}
+\index{get\+\_\+wage@{get\+\_\+wage}!Keno\+Bet@{Keno\+Bet}}
+\subsubsection{\texorpdfstring{get\+\_\+wage()}{get\_wage()}}
+{\footnotesize\ttfamily cash\+\_\+type Keno\+Bet\+::get\+\_\+wage (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+Retrieves the player ’s wage on this bet. \begin{DoxyReturn}{Returns}
+The wage value . 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_keno_bet_a4f059f08a41fc0f41e30cf5dd7014d8f}\label{class_keno_bet_a4f059f08a41fc0f41e30cf5dd7014d8f}} 
+\index{Keno\+Bet@{Keno\+Bet}!roll\+\_\+turn@{roll\+\_\+turn}}
+\index{roll\+\_\+turn@{roll\+\_\+turn}!Keno\+Bet@{Keno\+Bet}}
+\subsubsection{\texorpdfstring{roll\+\_\+turn()}{roll\_turn()}}
+{\footnotesize\ttfamily void Keno\+Bet\+::roll\+\_\+turn (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Generate 20 random numbers every round. 
+
+\begin{DoxyReturn}{Returns}
+void . 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_keno_bet_a513c7b942977a682d31c2242ca411fe4}\label{class_keno_bet_a513c7b942977a682d31c2242ca411fe4}} 
+\index{Keno\+Bet@{Keno\+Bet}!set\+\_\+rounds@{set\+\_\+rounds}}
+\index{set\+\_\+rounds@{set\+\_\+rounds}!Keno\+Bet@{Keno\+Bet}}
+\subsubsection{\texorpdfstring{set\+\_\+rounds()}{set\_rounds()}}
+{\footnotesize\ttfamily bool Keno\+Bet\+::set\+\_\+rounds (\begin{DoxyParamCaption}\item[{number\+\_\+type}]{rounds\+\_\+ }\end{DoxyParamCaption})}
+
+
+
+Sets the quantity of round the player will play . 
+
+
+\begin{DoxyParams}{Parameters}
+{\em round\+\_\+} & The round . \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if we have a wage above zero ; false otherwise . 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_keno_bet_ade3e0f73094137c791c22c51bdd9ce55}\label{class_keno_bet_ade3e0f73094137c791c22c51bdd9ce55}} 
+\index{Keno\+Bet@{Keno\+Bet}!set\+\_\+wage@{set\+\_\+wage}}
+\index{set\+\_\+wage@{set\+\_\+wage}!Keno\+Bet@{Keno\+Bet}}
+\subsubsection{\texorpdfstring{set\+\_\+wage()}{set\_wage()}}
+{\footnotesize\ttfamily bool Keno\+Bet\+::set\+\_\+wage (\begin{DoxyParamCaption}\item[{cash\+\_\+type}]{wage\+\_\+ }\end{DoxyParamCaption})}
+
+
+
+Sets the amount of money the player is betting . 
+
+\begin{DoxyReturn}{Returns}
+True if we have a wage above zero ; false otherwise . 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em wage\+\_\+} & The wage . \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_keno_bet_a865301e99ebddfcee895d19eadb43fba}\label{class_keno_bet_a865301e99ebddfcee895d19eadb43fba}} 
+\index{Keno\+Bet@{Keno\+Bet}!show\+\_\+bets@{show\+\_\+bets}}
+\index{show\+\_\+bets@{show\+\_\+bets}!Keno\+Bet@{Keno\+Bet}}
+\subsubsection{\texorpdfstring{show\+\_\+bets()}{show\_bets()}}
+{\footnotesize\ttfamily void Keno\+Bet\+::show\+\_\+bets (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Show Vector of Bets. 
+
+\begin{DoxyReturn}{Returns}
+void . 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_keno_bet_a50b9ffd882ae67857ecce259f5411f1c}\label{class_keno_bet_a50b9ffd882ae67857ecce259f5411f1c}} 
+\index{Keno\+Bet@{Keno\+Bet}!show\+\_\+payout@{show\+\_\+payout}}
+\index{show\+\_\+payout@{show\+\_\+payout}!Keno\+Bet@{Keno\+Bet}}
+\subsubsection{\texorpdfstring{show\+\_\+payout()}{show\_payout()}}
+{\footnotesize\ttfamily void Keno\+Bet\+::show\+\_\+payout (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Show Payout Table. 
+
+\begin{DoxyReturn}{Returns}
+void . 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_keno_bet_aa6f65b35514270c2707e60b9dea23ae9}\label{class_keno_bet_aa6f65b35514270c2707e60b9dea23ae9}} 
+\index{Keno\+Bet@{Keno\+Bet}!size@{size}}
+\index{size@{size}!Keno\+Bet@{Keno\+Bet}}
+\subsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily size\+\_\+t Keno\+Bet\+::size (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns to the current number of spots in the player ’s bet. 
+
+\begin{DoxyReturn}{Returns}
+Number of spots present in the bet. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Wilder/projetos/kenobet/include/\mbox{\hyperlink{kenobet_8h}{kenobet.\+h}}\item 
+C\+:/\+Users/\+Wilder/projetos/kenobet/src/\mbox{\hyperlink{kenobet_8cpp}{kenobet.\+cpp}}\end{DoxyCompactItemize}

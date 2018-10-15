@@ -1,3 +1,10 @@
+
+/**
+ * @file main.cpp
+ * @author Jose Wilder
+ * @author Emerson Freire
+ * @brief this is the main file of project
+*/
 #include <iostream>
 #include <vector>
 #include <fstream>
@@ -18,7 +25,7 @@ int main(int argc, char const *argv[])
     string number;
     number_type number_;
     cash_type wage_;
-    number_type rounds_;
+    number_type rounds_ =0;
     string array_bet;
     ifstream file ;
     file.open(filename);
@@ -34,10 +41,12 @@ int main(int argc, char const *argv[])
         rounds_ = stoi(line,nullptr,10);
         game.set_rounds(rounds_);
         }else if(i==2){
-             while(getline(file,number,' ')){
-                 number_ = stoi(number,nullptr,10);
-                 game.add_number(number_);
-             }
+            	int max = 1;
+             
+                 while(getline(file,number,' ')){
+                         number_ = stoi(number,nullptr,10);
+                         game.add_number(number_);
+                }
 
         }else{
         getline(file,line);
@@ -49,13 +58,9 @@ int main(int argc, char const *argv[])
     cout<<"-------------------------------------------------------"<<endl; 
         cout<<">>> Bet successfully read!\n You are going to wage a total of $"<< wage_ <<" dollars.\n"
         <<"Going for a total of "<< rounds_ <<" rounds, waging $"<<waggin<<" per round."<<endl
-        <<"Your bet has 3 numbers. They are: [ 12 21 64 ]"<<endl
-        <<"-------+---------"<<endl
-        <<"Hits | Payout"<<endl
-        <<"-------+---------"<<endl;
-        for(int i= 0 ; i<3;  i++){
-        cout<<"0"<<" | "<<"0"<<endl;
-        }
+        <<"Your bet has 3 numbers. They are: ";
+        game.show_bets();
+        game.show_payout();
     cout<<"-------------------------------------------------------"<<endl; 
         sleep_for(seconds(2));
        // system("clear");
